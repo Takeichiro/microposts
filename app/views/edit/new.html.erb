@@ -1,0 +1,10 @@
+ <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <%= form_for(@user) do |f| %>
+ 
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+
+        <% end %>
+    </div>
+</div>

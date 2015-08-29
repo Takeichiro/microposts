@@ -3,11 +3,12 @@ class CreateUsers < ActiveRecord::Migration
     create_table :users do |t|
       t.string :name
       t.string :email
+      t.string :location
+      t.text :about
       t.string :password_digest
 
-      t.timestamps
-
-      t.index :email, unique: true # この行を追加
+      t.timestamps null: false
+      t.index :email, unique: true
     end
   end
 end
