@@ -105,3 +105,15 @@ input {
     color: $state-danger-text;
   }
 }
+
+.edit_Area {
+  dt {
+    padding-top:5px;
+    padding-bottom:5px;
+  }
+  dd {
+    padding:5px;
+    background-color: #EEE;
+    margin-bottom:5px;
+  } 
+}
