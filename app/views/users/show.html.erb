@@ -9,8 +9,8 @@
     <dt>Location：</dt><dd><%= @user.location %></dd>
     <dt>About：</dt><dd><%= @user.about %></dd>
   </dl>
-
-  <div><a href="<%= edit_user_path(current_user) %>" class="btn btn-block btn-primary">Profile Edit</a></div>
+  
+  <div><%= link_to 'Profile Edit', edit_user_path , class: "btn btn-block btn-primary" %></div>
   
   </div>
 
@@ -23,6 +23,7 @@
     </section>
   </aside>
   <div class="col-md-8">
+    <%= render 'follow_form' if logged_in? %>
     <% if @user.microposts.any? %>
       <h3>Microposts (<%= @user.microposts.count %>)</h3>
       <ol class="microposts">
