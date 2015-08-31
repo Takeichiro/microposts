@@ -1,0 +1,34 @@
+
+<% provide(:title, @title) %>
+
+<div class="row">
+  <aside class="col-xs-12 col-sm-4">
+    <section class="user_info">
+      <h1>
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+      </h1>
+    </section>
+    <section>
+      <%= render 'shared/stats' %>
+    </section>
+  </aside>
+  <div class="col-xs-12 col-sm-8">
+
+    <h3><%= @title %></h3>
+
+    <% if @users.any? %>
+    <p><%= page_entries_info @users %></p>
+      <ul class="users">
+        <% @users.each do |user| %>
+        <li>
+          <h4><a href="<%= user_path(user) %>"><%= user.name %></a></h4>
+          <p class="location"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span><%= user.location %></p>
+          <p class="about"><%= user.about %></p>
+        </li>
+        <% end %>
+      </ul>
+      <%= paginate @users %>
+    <% end %>
+  </div>
+</div>

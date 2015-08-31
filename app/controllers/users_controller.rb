@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+  before_action :set_users, only: [:show, :edit, :update, :destroy, :followings, :followers]
 
   def edit
    @user = User.find(params[:id])
@@ -34,9 +34,28 @@ class UsersController < ApplicationController
     end
   end
 
+  def followings
+    @title = "Following"
+    @user = User.find(params[:id])
+    @users = @user.following_users.page(params[:page])
+    render 'show_follow'
+  end
+
+  def followers
+    @title = "Followers"
+    @user = User.find(params[:id])
+    @users = @user.follower_users.page(params[:page])
+    render 'show_follow'   
+  end
+
   private
 
   def user_params
     params.require(:user).permit(:name, :email, :location, :about, :password, :password_confirmation)
   end
+  
+  def set_users
+    @user = User.find(params[:id])
+  end
+  
 end

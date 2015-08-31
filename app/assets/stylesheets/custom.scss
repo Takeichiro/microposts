@@ -201,3 +201,47 @@ span.picture {
     border: 0;
   }
 }
+
+.stats {
+  overflow: auto;
+  a {
+    float: left;
+    padding: 0 10px;
+    border-left: 1px solid #DDDDDD;
+    color: gray;
+    &:first-child {
+      padding-left: 0;
+      border: 0;
+    }
+    &:hover {
+      text-decoration: none;
+      color: #FF0000;
+    }
+  }
+  strong {
+    display: block;
+  }
+}
+
+.user_avatars {
+  overflow: auto;
+  margin-top: 10px;
+  .gravatar {
+    margin: 1px 1px;
+  }
+}
+
+.users {
+  padding-left: 0px;
+  li {
+    background-color: #EEEEEE;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    list-style-type: none;
+    margin-left: 0px;
+  }
+  .location {
+    font-size: 0.8em;
+  }
+  
+}
